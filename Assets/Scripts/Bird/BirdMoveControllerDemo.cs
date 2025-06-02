@@ -7,7 +7,7 @@ public class BirdMoveControllerDemo : MonoBehaviour
     [SerializeField] private float _accelarationPower = 1.0f;
     [SerializeField] private float _rotateSpeed = 2.0f;
     [SerializeField] private float _upSpeed = 2.0f;
-    [SerializeField] private float _maxGravityForce = 1.0f;
+    [SerializeField] private float _maxGravityForce = 3.0f;
 
     private Vector3 _moveDirection = Vector3.zero;
     private CharacterController _controller;
@@ -19,7 +19,7 @@ public class BirdMoveControllerDemo : MonoBehaviour
     void Start()
     {
         _controller = GetComponent<CharacterController>();        
-        _animator = GetComponent<Animator>();
+        _animator = transform.GetChild(0).GetComponent<Animator>();
         _speed = _maxSpeed;
     }
 
