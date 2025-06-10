@@ -258,7 +258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &45878873
 Transform:
   m_ObjectHideFlags: 0
@@ -8604,6 +8604,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3022906042135298836, guid: 6a2c9636c18f8184c9cb3695874536bc, type: 3}
   m_PrefabInstance: {fileID: 1703950136}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2004724008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2004724010}
+  - component: {fileID: 2004724009}
+  m_Layer: 0
+  m_Name: CloudsSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2004724009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004724008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b11deb2485aea488c2743a68b00b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeTime: 50
+  _spawnTime: 2
+  _clouds:
+  - {fileID: 2501843789764303278, guid: 6a2c9636c18f8184c9cb3695874536bc, type: 3}
+  - {fileID: 2945050561381450321, guid: f2fde57f29f4cfc4d9790898da21e293, type: 3}
+--- !u!4 &2004724010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004724008}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2009149570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9035,3 +9084,4 @@ SceneRoots:
   - {fileID: 997130068}
   - {fileID: 1858145532}
   - {fileID: 45878873}
+  - {fileID: 2004724010}
