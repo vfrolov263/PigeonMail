@@ -1,0 +1,128 @@
+fileFormatVersion: 2
+guid: 1ff9793e987b1ff4aa5b9960867e17f0
+timeCreated: 1483040518
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: object
+    100002: object10
+    100004: object11
+    100006: object18
+    100008: object20
+    100010: object21
+    100012: object26
+    100014: object8
+    100016: object9
+    100018: Plane01
+    100020: //RootNode
+    400000: object
+    400002: object10
+    400004: object11
+    400006: object18
+    400008: object20
+    400010: object21
+    400012: object26
+    400014: object8
+    400016: object9
+    400018: Plane01
+    400020: //RootNode
+    2300000: object10
+    2300002: object11
+    2300004: object20
+    2300006: object21
+    2300008: object26
+    2300010: object8
+    2300012: object9
+    2300014: Plane01
+    3300000: object10
+    3300002: object11
+    3300004: object20
+    3300006: object21
+    3300008: object26
+    3300010: object8
+    3300012: object9
+    3300014: Plane01
+    4300000: object8
+    4300002: object9
+    4300004: object10
+    4300006: object11
+    4300008: object21
+    4300010: object20
+    4300012: object26
+    4300014: Plane01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79619
+  packageName: uSim Siege Engines
+  packageVersion: 1.0
+  assetPath: Assets/uSim_Siege engines/Models/Trebuchet/Trebuchet.FBX
+  uploadId: 153939

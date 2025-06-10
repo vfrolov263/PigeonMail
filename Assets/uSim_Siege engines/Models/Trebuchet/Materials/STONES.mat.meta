@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a3017c54caa93174dabbaff118e3b1be
+timeCreated: 1483040518
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79619
+  packageName: uSim Siege Engines
+  packageVersion: 1.0
+  assetPath: Assets/uSim_Siege engines/Models/Trebuchet/Materials/STONES.mat
+  uploadId: 153939
