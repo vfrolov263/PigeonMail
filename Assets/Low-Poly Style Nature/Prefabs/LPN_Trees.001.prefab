@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4000013679189794}
   - component: {fileID: 33000012841128178}
   - component: {fileID: 23000012045508636}
+  - component: {fileID: -4928813253290936083}
   m_Layer: 0
   m_Name: LPN_Trees.001
   m_TagString: Untagged
@@ -28,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -86,3 +87,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!205 &-4928813253290936083
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010932741508}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.032409064
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23000012045508636}
+  - screenRelativeHeight: 0.014173019
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23000012283226082, guid: 03fbe6db4827a41959091cf3f407fbc7, type: 3}
+  - screenRelativeHeight: 0.013848471
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
