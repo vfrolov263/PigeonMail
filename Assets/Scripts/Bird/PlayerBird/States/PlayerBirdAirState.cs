@@ -69,6 +69,7 @@ namespace PigeonMail
             public float accelaration, deceleration, activeDeceleration;
             public Vector3 rotationSpeed;
             public float minAngleX, maxAngleX, maxAngleZ;
+            public float gravityForce, gravityFuncPower;
         }
     }
 }

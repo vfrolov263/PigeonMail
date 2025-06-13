@@ -5,7 +5,7 @@ namespace PigeonMail
 {
     public abstract class PlayerBirdGroundedState : PlayerBirdState
     {
-        protected readonly Settings _settings; 
+        protected readonly Settings _settings;
 
         public PlayerBirdGroundedState(Settings settings)
         {
@@ -22,6 +22,7 @@ namespace PigeonMail
         {
             _rotation.y += _input.PointerDelta.x * _settings.rotationSpeed * Time.deltaTime;
             _playerBird.transform.rotation = Quaternion.Euler(0f, _rotation.y, 0f);
+            _playerBird.Move(new(0f, -_settings.gravityForce * Time.deltaTime, 0f));
         }
 
         public override void Dispose()
@@ -39,6 +40,7 @@ namespace PigeonMail
         {
             public float rotationSpeed;
             public float walkSpeed;
+            public float gravityForce;
         }
     }
 }
