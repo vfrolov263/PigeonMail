@@ -13,11 +13,11 @@ namespace PigeonMail
             private set;
             get;
         }
-        private Vector2 pD;
+        
         public Vector2 PointerDelta
         {
-            private set {pD = value; }
-            get { var ret = pD; ; return ret; }
+            private set;
+            get;
         }
        
         public void OnMove(InputValue value)

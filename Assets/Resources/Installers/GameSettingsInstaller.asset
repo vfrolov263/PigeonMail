@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerBird:
     FlySettings:
-      maxSpeed: 270
+      maxSpeed: 300
       minSpeed: 80
       accelaration: 50
-      deceleration: 60
-      activeDeceleration: 100
-      rotationSpeed: {x: 50, y: 100, z: 100}
+      deceleration: 75
+      activeDeceleration: 110
+      rotationSpeed: {x: 50, y: 80, z: 100}
       minAngleX: -30
       maxAngleX: 30
       maxAngleZ: 90
-      gravityForce: 150
+      gravityForce: 80
       gravityFuncPower: 0.5
     GroundSettings:
       rotationSpeed: 100
       walkSpeed: 30
-      gravityForce: 50
+      gravityForce: 300
     TakeOffSettings:
       speed: {x: 10, y: 40}
       moveDelayInSeconds: 0.8
