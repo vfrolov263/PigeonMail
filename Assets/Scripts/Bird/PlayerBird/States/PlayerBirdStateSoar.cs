@@ -27,6 +27,10 @@ namespace PigeonMail
 
             if (_playerBird.Speed > _settings.minSpeed)
                 _playerBird.Speed += _deceleration * Time.deltaTime;
+
+            _playerBird.Move(new(0f, 
+            -_settings.gravityForce * (1f - (float)Math.Pow(_playerBird.Speed / _settings.maxSpeed, _settings.gravityFuncPower)) * Time.deltaTime,
+             0f));
         }
 
         public class Factory : PlaceholderFactory<PlayerBirdStateSoar>
