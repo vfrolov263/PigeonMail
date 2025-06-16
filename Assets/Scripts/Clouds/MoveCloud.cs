@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MoveCloud : MonoBehaviour
 {
-    private void Update()
+    private void FixedUpdate()
     {
-        transform.Translate(new Vector3(-0.1f, 0, 0));
+        transform.Translate(new Vector3(-0.25f, 0, 0));
     }
 }
