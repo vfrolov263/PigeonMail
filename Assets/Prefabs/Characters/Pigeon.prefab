@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625c14eee3ad46c99df7c7c891ef668a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 1, y: 0.5, z: 0.5}
+  Damping: {x: 1, y: 0.2, z: 0.2}
   ShoulderOffset: {x: 0.25, y: -0.4, z: 0}
   VerticalArmLength: 0.4
   CameraSide: 1

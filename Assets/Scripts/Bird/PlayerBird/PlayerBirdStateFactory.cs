@@ -5,12 +5,13 @@ namespace PigeonMail
 {
     public enum PlayerBirdStates
     {
+        Falling = -1,
         Idle,
         Walking,
         TakingOff,
         Flying,
         Soaring,
-        Landing        
+        Landing   
     }
 
     public class PlayerBirdStateFactory
@@ -20,16 +21,19 @@ namespace PigeonMail
         private PlayerBirdStateTakeOff.Factory _takeoffFactory;
         private PlayerBirdStateFly.Factory _flyFactory;
         private PlayerBirdStateSoar.Factory _soarFactory;
+        private PlayerBirdStateFall.Factory _fallFactory;
 
         public PlayerBirdStateFactory(PlayerBirdStateIdle.Factory idleFactory,
         PlayerBirdStateWalk.Factory walkFactory, PlayerBirdStateTakeOff.Factory takeoffFactory,
-         PlayerBirdStateFly.Factory flyFactory, PlayerBirdStateSoar.Factory soarFactory)
+         PlayerBirdStateFly.Factory flyFactory, PlayerBirdStateSoar.Factory soarFactory,
+         PlayerBirdStateFall.Factory fallFactory)
         {
             _idleFactory = idleFactory;
             _walkFactory = walkFactory;
             _takeoffFactory = takeoffFactory;
             _flyFactory = flyFactory;
             _soarFactory = soarFactory;
+            _fallFactory = fallFactory;
         }
 
         public PlayerBirdState ChangeState(PlayerBirdStates state)
@@ -46,6 +50,8 @@ namespace PigeonMail
                     return _flyFactory.Create();
                 case PlayerBirdStates.Soaring:
                     return _soarFactory.Create();
+                case PlayerBirdStates.Falling:
+                    return _fallFactory.Create();
                 default:
                     throw Assert.CreateException();
             }

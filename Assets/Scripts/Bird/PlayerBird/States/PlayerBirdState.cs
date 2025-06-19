@@ -29,6 +29,11 @@ namespace PigeonMail
 
         public virtual void OnTriggerEnter(Collider other) {}
 
+        public virtual void OnCollisionEnter(Vector3 moveDirection)
+        {
+
+        }
+
         public virtual void Dispose() {}
     }
 }

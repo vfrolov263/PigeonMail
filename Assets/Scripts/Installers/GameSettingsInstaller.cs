@@ -7,7 +7,9 @@ namespace PigeonMail
     [CreateAssetMenu(fileName = "GameSettingsInstaller", menuName = "Installers/GameSettingsInstaller")]
     public class GameSettingsInstaller : ScriptableObjectInstaller<GameSettingsInstaller>
     {
+        public GameInstaller.Settings GameInstaller;
         public PlayerBirdSettings PlayerBird;
+        public MailSettings Mail;
 
         [Serializable]
         public class PlayerBirdSettings
@@ -15,13 +17,25 @@ namespace PigeonMail
             public PlayerBirdAirState.Settings FlySettings;
             public PlayerBirdGroundedState.Settings GroundSettings;
             public PlayerBirdStateTakeOff.Settings TakeOffSettings;
+            public PlayerBirdLimiter.Settings LimitSettings;
+        }
+
+        [Serializable]
+        public class MailSettings
+        {
+            public MailManager.Settings ManagerSettings;
+            public MailUI.Settings UISettings;
         }
 
         public override void InstallBindings()
         {
+            Container.BindInstance(GameInstaller);
             Container.BindInstance(PlayerBird.FlySettings);
             Container.BindInstance(PlayerBird.GroundSettings);
             Container.BindInstance(PlayerBird.TakeOffSettings);
+            Container.BindInstance(PlayerBird.LimitSettings);
+            Container.BindInstance(Mail.ManagerSettings);
+            Container.BindInstance(Mail.UISettings);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace PigeonMail
     public class PlayerInput : MonoBehaviour, IInput
     {
         public event Action JumpActions;
+
         public Vector2 Axes
         {
             private set;
@@ -33,6 +34,13 @@ namespace PigeonMail
         public void OnJump(InputValue value)
         {
             JumpActions?.Invoke();
+        }
+
+        // For showcase only
+        public event Action EscapeActions;
+        public void OnEscape(InputValue value)
+        {
+            EscapeActions?.Invoke();
         }
     }
 }

@@ -15,8 +15,7 @@ namespace PigeonMail
                 _playerBird.ChangeState(PlayerBirdStates.Idle);
 
             base.Update();
-            Vector3 motion = _playerBird.transform.forward * _settings.walkSpeed;
-            motion.y = -1f;
+            Vector3 motion = _input.Axes.y * _playerBird.transform.forward * _settings.walkSpeed;
             _playerBird.Move(motion * Time.deltaTime);
         }
 

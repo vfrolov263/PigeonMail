@@ -53,13 +53,25 @@ namespace PigeonMail
             _playerBird.transform.Rotate(new(0f, _rotation.y, 0f), Space.World);
 
             Vector3 motion = _playerBird.transform.forward * _playerBird.Speed;
-            _playerBird.Move(motion * Time.deltaTime);
+            //Debug.Log($"Motion: {motion}");
+            _playerBird.Move(motion * Time.deltaTime, out var flags);
+
+            // if (flags != CollisionFlags.None)
+            //     Debug.Log($"Side collision at {Time.timeSinceLevelLoad}");
         }
 
-        private void CheckLanding()
+        protected void CheckLanding()
         {
             if (_playerBird.IsGrounded)
                 _playerBird.ChangeState(PlayerBirdStates.Idle);
+        }
+
+        public override void OnCollisionEnter(Vector3 moveDirection)
+        {
+            float angle = Vector3.Angle(moveDirection, _playerBird.Velocity);
+
+            if (angle > 30f && _playerBird.Speed > 10f)
+                _playerBird.ChangeState(PlayerBirdStates.Falling);
         }
 
         [Serializable]
@@ -69,7 +81,7 @@ namespace PigeonMail
             public float accelaration, deceleration, activeDeceleration;
             public Vector3 rotationSpeed;
             public float minAngleX, maxAngleX, maxAngleZ;
-            public float gravityForce, gravityFuncPower;
+            public float gravityForce, gravityFuncPower, gravityFallForce;
         }
     }
 }

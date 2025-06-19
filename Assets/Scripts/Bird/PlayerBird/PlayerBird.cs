@@ -44,9 +44,22 @@ namespace PigeonMail
             }
         }
 
+        public Vector3 Velocity
+        {
+            get
+            {
+                return _controller.velocity;
+            }
+        }
+
         public override void Move(Vector3 motion)
         {
-            _controller.Move(motion * Time.deltaTime);
+            _controller.Move(motion);
+        }
+
+        public void Move(Vector3 motion, out CollisionFlags flags)
+        {
+            flags = _controller.Move(motion);
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -61,11 +74,11 @@ namespace PigeonMail
 
         // Update is called once per frame
         void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-                Application.Quit();
-                
+        {             
             _state?.Update();
+
+            //Debug.Log($"Speed: {_controller.transform.forward}");
+           // Debug.Log($"Velocity: {_controller.velocity}, magnitude: {_controller.velocity.magnitude}");
         }
 
         public void ChangeState(PlayerBirdStates state)
@@ -80,7 +93,27 @@ namespace PigeonMail
 
         private void OnCollisionEnter(Collision other)
         {
-            _state?.OnTriggerEnter(other.collider);
+            //other.impulse;
+           // Debug.Log("Wall");
+           // _state?.OnCollisionEnter(other);
+
+            // var actualSpeed = _controller.velocity.z;
+
+            // if (actualSpeed < 0.5f && Speed > 5f)
+            //     ChangeState(PlayerBirdStates.Falling);
+        }
+
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            _state?.OnCollisionEnter(hit.moveDirection);
+            // if (_state is not PlayerBirdAirState || _state is PlayerBirdStateFall)
+            //     return;
+
+            // float angle = Vector3.Angle(hit.moveDirection, _controller.velocity);
+            // //Debug.Log($"Angle: {Vector3.Angle(hit.moveDirection, _controller.velocity)}");
+
+            // if (angle > 30f)
+            //     ChangeState(PlayerBirdStates.Falling);
         }
     }
 }

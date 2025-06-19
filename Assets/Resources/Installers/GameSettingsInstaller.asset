@@ -12,24 +12,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e20ac2bbad177489ee7ed22096b1ca, type: 3}
   m_Name: GameSettingsInstaller
   m_EditorClassIdentifier: 
+  GameInstaller:
+    LetterPrefab: {fileID: 6863956519375408697, guid: 2e122297c56e15f44be6ca25de101b47, type: 3}
+    ReceiverPrefab: {fileID: 6209277093756199351, guid: db8786442acd0fb4da3ae245cba049be, type: 3}
   PlayerBird:
     FlySettings:
-      maxSpeed: 300
-      minSpeed: 80
-      accelaration: 50
-      deceleration: 75
-      activeDeceleration: 110
-      rotationSpeed: {x: 50, y: 80, z: 100}
-      minAngleX: -30
+      maxSpeed: 30
+      minSpeed: 1
+      accelaration: 3
+      deceleration: 1
+      activeDeceleration: 8
+      rotationSpeed: {x: 80, y: 80, z: 230}
+      minAngleX: -45
       maxAngleX: 30
       maxAngleZ: 90
-      gravityForce: 80
+      gravityForce: 2
       gravityFuncPower: 0.5
+      gravityFallForce: 10
     GroundSettings:
-      rotationSpeed: 100
-      walkSpeed: 30
-      gravityForce: 300
+      rotationSpeed: 230
+      walkSpeed: 1
+      gravityForce: 10
     TakeOffSettings:
-      speed: {x: 10, y: 40}
+      speed: {x: 0.5, y: 1}
       moveDelayInSeconds: 0.8
-      moveTimeInSeconds: 1.4
+      moveTimeInSeconds: 1
+    LimitSettings:
+      minHabitatPoint: {x: -1000, y: -10, z: -1000}
+      maxHabitatPoint: {x: 1000, y: 120, z: 1000}
+  Mail:
+    ManagerSettings:
+      letterClerkOffset: {x: 0, y: 2.2, z: 0}
+      letterPlayerOffset: {x: 0, y: -0.055, z: 0}
+      letterPlayerScale: {x: 0.5, y: 0.5, z: 1}
+      receiverOffset: {x: 0, y: 2, z: 0}
+      letterRotateSpeed: 90
+      timeBeforeSpawnNew: 3
+    UISettings:
+      redFlag: {fileID: 21300000, guid: 23ab3dab22018f545b3523a088d2dde2, type: 3}
+      blueFlag: {fileID: 21300000, guid: 105ff3b877d09e64b8221e205da7913a, type: 3}
+      yellowFlag: {fileID: 21300000, guid: 9d91a34d2e387744a9069126c9cfb4df, type: 3}
+      giveGoal: {fileID: 21300000, guid: 7fcf8d81b3720d74eae0ba4a26638dcb, type: 3}
+      getGoal: {fileID: 21300000, guid: f0a9975766a8cba42a4c512e6d78b176, type: 3}
