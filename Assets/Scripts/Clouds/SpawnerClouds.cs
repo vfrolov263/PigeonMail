@@ -35,6 +35,7 @@ public class SpawnerClouds : MonoBehaviour
     private void ActionOnGet(GameObject cloud)
     {
         cloud.transform.position = new Vector3(300, 120 + Random.Range(-25, 25), Random.Range(-250, 250));
+        cloud.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         cloud.SetActive(true);
         StartCoroutine(LifeTime(cloud));
     }

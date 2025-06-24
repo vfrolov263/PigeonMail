@@ -102,11 +102,11 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.032409064
+  - screenRelativeHeight: 0.019858329
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23000012045508636}
-  - screenRelativeHeight: 0.014173019
+  - screenRelativeHeight: 0.013848471
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23000012283226082, guid: 03fbe6db4827a41959091cf3f407fbc7, type: 3}
@@ -133,5 +133,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.37, y: 3.9737074, z: 0.4}
-  m_Center: {x: 0.005523056, y: 1.9868537, z: 0.021962047}
+  m_Size: {x: 0.22, y: 3.9737074, z: 0.16}
+  m_Center: {x: 0.005523056, y: 1.56, z: -0.01}
