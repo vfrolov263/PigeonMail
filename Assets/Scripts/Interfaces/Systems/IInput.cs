@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace PigeonMail
@@ -11,5 +12,13 @@ namespace PigeonMail
 
         // For showcase only
         event Action EscapeActions;
+
+        [Serializable]
+        public class Settings
+        {
+            public bool verticalInversion;
+            [Range(.1f, 1f)]
+            public float sensitivity;
+        }
     }
 }

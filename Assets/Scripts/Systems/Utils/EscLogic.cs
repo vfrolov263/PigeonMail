@@ -29,6 +29,8 @@ public class EscLogic : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         else if (Input.GetKeyDown(KeyCode.J))
             _fire.SetActive(!_fire.activeSelf);
+        else if (Input.GetKeyDown(KeyCode.P))
+            Application.Quit();
     }
 
     private void SwitchMenu()

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UIText_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 7a17c4b33e7482440b545fd94a7b3054, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 17643687936
+    m_Localized: Start game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90456805376
+    m_Localized: Continue game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 155317522432
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253963358208
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337585197056
+    m_Localized: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 874493857792
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4182939881472
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4656388722688
+    m_Localized: "\rControl sensitivity"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4876174446592
+    m_Localized: Invert vertical axis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5258694971392
+    m_Localized: "\rAudio volume"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 129120858361856
+    m_Localized: Loading...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 142592241389568
+    m_Localized: About game
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
