@@ -9,4 +9,22 @@ namespace PigeonMail
     {
         public Letter letter;
     } 
+
+    public struct NextLessonSignal
+    {
+    }
+
+    public struct OutOfTimeSignal
+    {
+    }
+
+    public struct CityDamageSignal
+    {
+        public CityStateTracker cityTracker;
+    }
+
+    public struct CityReceivedLetterSignal
+    {
+        public CityStateTracker cityTracker;
+    }
 }

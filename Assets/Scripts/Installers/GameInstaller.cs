@@ -14,6 +14,7 @@ namespace PigeonMail
             InstallPlayerBird();
             InstallHuman();
             InstallMail();
+            InstallSystems();
             GameSignalsInstaller.Install(Container);
         }
 
@@ -50,6 +51,12 @@ namespace PigeonMail
             Container.BindFactory<LetterReceiver, LetterReceiver.Factory>().FromComponentInNewPrefab(_settings.ReceiverPrefab);
 
            // Container.Bind<MailManager>().AsSingle();
+        }
+
+        private void InstallSystems()
+        {
+            Container.BindInterfacesAndSelfTo<AudioPlayer>().AsSingle();
+            Container.Bind<TimeScaler>().AsSingle();
         }
 
         class LetterPool : MonoPoolableMemoryPool<Transform, Transform, float, IMemoryPool, Letter>

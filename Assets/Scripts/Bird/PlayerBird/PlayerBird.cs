@@ -40,7 +40,8 @@ namespace PigeonMail
         {
             get
             {
-                return TryGetComponent<Animator>(out Animator animator) ? animator : null;
+                //return TryGetComponent<Animator>(out Animator animator) ? animator : null;
+                return GetComponentInChildren<Animator>();
             }
         }
 

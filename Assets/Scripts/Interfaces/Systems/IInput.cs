@@ -9,8 +9,8 @@ namespace PigeonMail
         event Action JumpActions;
         Vector2 Axes { get; }
         Vector2 PointerDelta { get; }
+        Vector2 DirectionDelta { get; }
 
-        // For showcase only
         event Action EscapeActions;
 
         [Serializable]

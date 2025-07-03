@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca65e808e7215b644a11545de7e42396
+    m_Address: Assets/Settings/Localization/Text/TutorialText Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fcabee2a5bd620f43938b22d747c63b8
     m_Address: Assets/Settings/Localization/Text/AboutGameText Shared Data.asset
     m_ReadOnly: 1

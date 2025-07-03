@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputSettings:
     verticalInversion: 0
-    sensitivity: 0
+    sensitivity: 0.5
+  AudioSettings:
+    volume: 0.7623726
+    decayRate: 0.5
   PrefsNames:
+    resolution: resolution
+    fullscreen: fullscreen
     inversion: vertical_inversion
     volume: volume
     sensitivity: controls_sensitivity

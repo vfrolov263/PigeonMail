@@ -13,14 +13,20 @@ namespace PigeonMail
         private Letter.Factory _letterFactory;
         private Settings _settings;
         private SignalBus _signalBus;
+        private AudioPlayer _audioPlayer;
+        private LetterTimer _letterTimer;
 
         [Inject]
-        public void Construct(Letter.Factory letterFactory, Settings settings, SignalBus signalBus)
+        public void Construct(Letter.Factory letterFactory, Settings settings, SignalBus signalBus,
+            AudioPlayer audioPlayer, LetterTimer letterTimer)
         {
             _letterFactory = letterFactory;
             _settings = settings;
             _signalBus = signalBus;
             _signalBus.Subscribe<LetterStatusChangedSignal>(OnLetterStatusChanged);
+            _signalBus.Subscribe<OutOfTimeSignal>(OnOutOfTimeSignal);
+            _audioPlayer = audioPlayer;
+            _letterTimer = letterTimer;
         }
 
         private void Start()
@@ -28,10 +34,31 @@ namespace PigeonMail
             Invoke("CreateLetter", _settings.timeBeforeSpawnNew);
         }
 
-        public void OnLetterStatusChanged(LetterStatusChangedSignal signal)
+        private void OnLetterStatusChanged(LetterStatusChangedSignal signal)
         {
             if (_letters.Count > 0 && signal.letter == _letters[0])
+            {
                 _signalBus.Fire(new TrackableLetterStatusChangedSignal() { letter = signal.letter });
+
+                switch (signal.letter.Status)
+                {
+                    case LetterStatus.Delivering:
+                        _letterTimer.gameObject.SetActive(true);
+                        break;
+                    case LetterStatus.Delivered:
+                    case LetterStatus.Lost:
+                        _letterTimer.gameObject.SetActive(false);
+                        break;
+                }
+            }
+        }
+
+        private void OnOutOfTimeSignal()
+        {
+            if (_letters.Count == 0)
+                return;
+
+            _letters[0].Status = LetterStatus.Lost;
         }
 
         public void ReleaseLetter(Letter letter)
@@ -54,7 +81,7 @@ namespace PigeonMail
             while (to == from);
 
             _letters.Add(_letterFactory.Create(_clerks[from].transform, _clerks[to].transform, 1f));
-            
+            _audioPlayer.PlayShot(_settings.newLetterSound);
            // _letters.Add(new(this, _clerks[from].transform, _clerks[to].transform, 1f));
         }
 
@@ -67,6 +94,7 @@ namespace PigeonMail
             public Vector3 receiverOffset;
             public float letterRotateSpeed;
             public float timeBeforeSpawnNew;
+            public AudioClip newLetterSound;
         }
     }
 }

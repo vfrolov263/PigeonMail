@@ -22,21 +22,24 @@ MonoBehaviour:
       accelaration: 3
       deceleration: 1
       activeDeceleration: 8
-      rotationSpeed: {x: 80, y: 80, z: 230}
+      rotationSpeed: {x: 160, y: 160, z: 460}
       minAngleX: -45
       maxAngleX: 30
       maxAngleZ: 90
       gravityForce: 2
       gravityFuncPower: 0.5
       gravityFallForce: 10
+      flySound: {fileID: 8300000, guid: def5eca3e08568f4fa8cef29118ee69e, type: 3}
+      soarSound: {fileID: 8300000, guid: 64497b1f269769d45b97454928ac30f3, type: 3}
     GroundSettings:
-      rotationSpeed: 230
+      rotationSpeed: 400
       walkSpeed: 1
       gravityForce: 10
     TakeOffSettings:
       speed: {x: 0.5, y: 1}
       moveDelayInSeconds: 0.8
       moveTimeInSeconds: 1
+      takeoffSound: {fileID: 8300000, guid: 1b918f2744848c046925773336b46cbe, type: 3}
     LimitSettings:
       minHabitatPoint: {x: -1000, y: -10, z: -1000}
       maxHabitatPoint: {x: 1000, y: 120, z: 1000}
@@ -48,9 +51,23 @@ MonoBehaviour:
       receiverOffset: {x: 0, y: 2, z: 0}
       letterRotateSpeed: 90
       timeBeforeSpawnNew: 3
+      newLetterSound: {fileID: 8300000, guid: 6a42e20786c37ae4280ceca39a1ce74f, type: 3}
     UISettings:
       redFlag: {fileID: 21300000, guid: 23ab3dab22018f545b3523a088d2dde2, type: 3}
       blueFlag: {fileID: 21300000, guid: 105ff3b877d09e64b8221e205da7913a, type: 3}
       yellowFlag: {fileID: 21300000, guid: 9d91a34d2e387744a9069126c9cfb4df, type: 3}
       giveGoal: {fileID: 21300000, guid: 7fcf8d81b3720d74eae0ba4a26638dcb, type: 3}
       getGoal: {fileID: 21300000, guid: f0a9975766a8cba42a4c512e6d78b176, type: 3}
+    TimerSettings:
+      initialDeliveryTime: 30
+      initialDeliveryTimeDelta: 20
+      initialDeliveryTimeMin: 30
+      voltageTime: 15
+      voltageColor: {r: 0.8113208, g: 0.059700873, b: 0.059700873, a: 1}
+  CitySettings:
+    health: 3
+    mailCapacity: 3
+    healthIconPrefab: {fileID: 1508377483617922939, guid: aa2f34f8024465244ab143dc094395ce, type: 3}
+    letterIconPrefab: {fileID: 620971119283064389, guid: 92f685aaec3536848b42ab08e9d54357, type: 3}
+    noneColor: {r: 0.11372549, g: 0, b: 0, a: 1}
+    healthOnFire: 2

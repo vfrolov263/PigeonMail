@@ -16,7 +16,7 @@ namespace PigeonMail
     {
         public Transform From { private set; get; }
         public Transform To { private set; get; }
-        public float TimeForDelivary { private set; get; }
+        public float TimeForDelivery { private set; get; }
         private IMemoryPool _pool;
         private LetterStatus _status;
         private PlayerBird _player;
@@ -73,11 +73,11 @@ namespace PigeonMail
             _pool = null;
         }
 
-        public void OnSpawned(Transform from, Transform to, float timeForDelivary, IMemoryPool pool)
+        public void OnSpawned(Transform from, Transform to, float timeForDelivery, IMemoryPool pool)
         {
             From = from;
             To = to;
-            TimeForDelivary = timeForDelivary;
+            TimeForDelivery = timeForDelivery;
             _pool = pool;
             transform.parent = from;
             transform.localPosition = _settings.letterClerkOffset;

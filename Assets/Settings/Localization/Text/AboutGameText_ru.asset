@@ -19,9 +19,8 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 11947823104
-    m_Localized: "\u0418\u0433\u0440\u0430 \u043E\u0442 \u041F\u042C\u042F\u041D\u042B\u0425
-      \u041E\u0420\u0423\u0416\u0415\u041D\u041E\u0421\u0426\u0415\u0412\n\u0418\u0449\u0438
-      \u043D\u0430 \u0432 \u0442\u0433: @pigeonmail_game"
+    m_Localized: "\u0418\u0433\u0440\u0430 \u043E\u0442 DRUNKERN SQUIRES\n\u0418\u0449\u0438
+      \u043D\u0430\u0441 \u0432 \u0442\u0433: @pigeonmail_game"
     m_Metadata:
       m_Items: []
   references:

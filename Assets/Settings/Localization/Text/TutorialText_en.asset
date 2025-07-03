@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: TutorialText_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: ca65e808e7215b644a11545de7e42396, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 13617156096
+    m_Localized: Welcome to Pigeon Mail!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 312725557248
+    m_Localized: You are a brave pigeon, capable of maintaining communication between
+      settlements.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 764393377792
+    m_Localized: "\rYou can walk.\r\nTo walk, hold down the keys W/S or arrows.\n(Lleft
+      stick on the gamepad: UP- forward, DOWN - backward)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1350325063680
+    m_Localized: 'The direction of walking can be set using the mouse.
+
+      (Right
+      stick on the gamepad)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1933912133632
+    m_Localized: Reach the red marker!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5585003433984
+    m_Localized: It's time to fly a little!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5987845361664
+    m_Localized: "\r- To take off from the ground, press Space.\n([A] on the gamepad) "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6453459243008
+    m_Localized: "\r- To accelerate and decelerate, hold down the W/S keys or the
+      arrow keys.\n\r(Left stick on the gamepad: UP - acceleration, DOWN - deceleration)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6687065198592
+    m_Localized: "\r- Use the mouse to control the direction of flight.\n(Right stick
+      on the gamepad)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7511300460544
+    m_Localized: "\rFly to the next red marker!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10704575090688
+    m_Localized: "\rYou are ready to go in search of your first letter!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11644032077824
+    m_Localized: "\rA flag of a certain color and an icon of a scribe with a letter
+      will appear in the upper left corner."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12441620926464
+    m_Localized: There are only three settlements on the mainland. Each settlement
+      has a flag of a certain color. You need to find a settlement with a flag of
+      the same color as the one shown on the screen in the upper left corner.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13179772293120
+    m_Localized: Now the required settlement is marked with a red marker to make
+      it easier.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13511902449664
+    m_Localized: Find the right settlement!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15393349783552
+    m_Localized: "\rYou have found the right settlement!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15733985988608
+    m_Localized: "\rIn this settlement the flags are the same color as shown in the
+      upper left corner. The scribe is walking around the settlement. You need to
+      find him and take the letter. He is currently marked with a red marker to make
+      the task easier."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16187809681408
+    m_Localized: Find the scribe!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22199669182464
+    m_Localized: "\rGrab the letter!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22339884765184
+    m_Localized: Now just point the bird straight at the letter spinning above the
+      scribe's head!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23246022201344
+    m_Localized: Find the addressee's settlement!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23494559879168
+    m_Localized: Now a new flag and a scribe icon with an exclamation mark will appear
+      in the upper left corner.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23802014945280
+    m_Localized: You need to find a settlement with a flag of the same color as the
+      icon. For convenience, it is now marked with a red marker.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24087558967296
+    m_Localized: Find the right settlement!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24856639131648
+    m_Localized: "\rYou have found the right settlement!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25016186261504
+    m_Localized: This settlement has a flag of the right color. Find the scribe.
+      He is marked with a red marker.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25263419510784
+    m_Localized: "\rFind the scribe!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25421662212096
+    m_Localized: Give the letter!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26411585064960
+    m_Localized: "\rJust fly closer to the scribe to give him the letter."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27230149627904
+    m_Localized: "\rGreat job!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27339662905344
+    m_Localized: "\rKeep up the good work. Deliver all the letters on time so that
+      peace can reign on the continent. But remember - your studies are over. You
+      have time constraints now. If you fail to deliver the letters on time, you
+      will lose the settlement..."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

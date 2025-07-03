@@ -10,13 +10,16 @@ namespace PigeonMail
         protected PlayerBird _playerBird;
         protected Vector3 _rotation;
         protected IInput.Settings _inputSettings;
+        protected AudioPlayer _audioPlayer;
 
         [Inject]
-        protected virtual void Construct(IInput input, PlayerBird playerBird, IInput.Settings inputSettings)
+        protected virtual void Construct(IInput input, PlayerBird playerBird, 
+        IInput.Settings inputSettings, AudioPlayer audioPlayer)
         {
             _input = input;
             _playerBird = playerBird;
             _inputSettings = inputSettings;
+            _audioPlayer = audioPlayer;
         }
 
         public virtual void Start() 

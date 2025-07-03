@@ -7,6 +7,7 @@ TagManager:
   - Letter
   - Wind
   - Egg
+  - TutorialTrigger
   layers:
   - Default
   - TransparentFX

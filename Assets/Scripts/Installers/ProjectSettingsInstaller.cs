@@ -8,17 +8,19 @@ namespace PigeonMail
     public class ProjectSettingsInstaller : ScriptableObjectInstaller<ProjectSettingsInstaller>
     {
         public IInput.Settings InputSettings;
+        public AudioPlayer.Settings AudioSettings;
         public SavedPrefsNames PrefsNames;
         
         [Serializable]
         public class SavedPrefsNames
         {
-            public string inversion, volume, sensitivity;
+            public string resolution, fullscreen, inversion, volume, sensitivity;
         }
 
         public override void InstallBindings()
         {
             Container.BindInstance(InputSettings);
+            Container.BindInstance(AudioSettings);
             Container.BindInstance(PrefsNames);
         }
     }

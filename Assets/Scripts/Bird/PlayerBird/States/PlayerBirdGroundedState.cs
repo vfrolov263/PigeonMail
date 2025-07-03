@@ -21,7 +21,7 @@ namespace PigeonMail
 
         public override void Update()
         {
-            _rotation.y += _input.PointerDelta.x * _settings.rotationSpeed * Time.deltaTime;
+            _rotation.y += _input.DirectionDelta.x * _settings.rotationSpeed * Time.deltaTime;
             _playerBird.transform.rotation = Quaternion.Euler(0f, _rotation.y, 0f);
             _playerBird.Move(new(0f, -_settings.gravityForce * Time.deltaTime, 0f));
 

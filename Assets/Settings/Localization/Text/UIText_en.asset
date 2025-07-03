@@ -66,6 +66,33 @@ MonoBehaviour:
     m_Localized: About game
     m_Metadata:
       m_Items: []
+  - m_Id: 459327708418048
+    m_Localized: Fullscreen mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459487612063744
+    m_Localized: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 515752912572416
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556912489287680
+    m_Localized: Skip tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850287474003968
+    m_Localized: 'Take off: Spacebar ([A])
+
+      Accelerate/slow down: W/S (Left
+      stick)
+
+      Turn: Mouse (Right stick)
+
+      Pause: Esc (Start/Pause)'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

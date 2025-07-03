@@ -1,5 +1,8 @@
+using System;
 using PigeonMail;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using UnityEngine.SceneManagement;
 using Zenject;
 
@@ -9,41 +12,56 @@ public class EscLogic : MonoBehaviour
     GameObject _fire;
     GameObject _startScreen;
     IInput _input;
+    IInput.Settings _settings;
+    [SerializeField]
+    TMP_Text _text;
 
     
-    [Inject]
-    public void Construct(IInput input)
-    {
-        input.EscapeActions += SwitchMenu;
-    }
+    // [Inject]
+    // public void Construct(IInput input, IInput.Settings settings)
+    // {
+    //     input.EscapeActions += SwitchMenu;
+    //     _settings = settings;
+    // }
 
-    void Start()
-    {
-        _startScreen = transform.GetChild(0).gameObject;
-        Time.timeScale = _startScreen.activeSelf ? 0f : 1f;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        else if (Input.GetKeyDown(KeyCode.J))
-            _fire.SetActive(!_fire.activeSelf);
-        else if (Input.GetKeyDown(KeyCode.P))
-            Application.Quit();
-    }
+    // void Start()
+    // {
+    //     _startScreen = transform.GetChild(0).gameObject;
+    //     Time.timeScale = _startScreen.activeSelf ? 0f : 1f;
+    //     _text.text = String.Format("{0:#.0}", _settings.sensitivity);
+    // }
+    // // Update is called once per frame
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.H))
+    //         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //     else if (Input.GetKeyDown(KeyCode.J))
+    //         _fire.SetActive(!_fire.activeSelf);
+    //     else if (Input.GetKeyDown(KeyCode.P))
+    //         Application.Quit();
+    //     else if (Input.GetKeyDown(KeyCode.Equals))
+    //     {
+    //         _settings.sensitivity += 0.1f;
+    //         _text.text = String.Format("{0:#.0}", _settings.sensitivity);
+    //     }
+    //     else if (Input.GetKeyDown(KeyCode.Minus))
+    //     {
+    //         _settings.sensitivity -= 0.1f;
+    //         _text.text = String.Format("{0:#.0}", _settings.sensitivity);
+    //     }  
+    // }
 
-    private void SwitchMenu()
-    {
-        if (_startScreen.activeSelf)
-        {
-            _startScreen.SetActive(false);
-            Time.timeScale = 1f;
-        }
-        else
-        {
-            _startScreen.SetActive(true);
-            Time.timeScale = 0f;
-        }
-    }
+    // private void SwitchMenu()
+    // {
+    //     if (_startScreen.activeSelf)
+    //     {
+    //         _startScreen.SetActive(false);
+    //         Time.timeScale = 1f;
+    //     }
+    //     else
+    //     {
+    //         _startScreen.SetActive(true);
+    //         Time.timeScale = 0f;
+    //     }
+    // }
 }

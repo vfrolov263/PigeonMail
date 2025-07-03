@@ -10,6 +10,7 @@ namespace PigeonMail
         public GameInstaller.Settings GameInstaller;
         public PlayerBirdSettings PlayerBird;
         public MailSettings Mail;
+        public CityStateTracker.Settings CitySettings;
 
         [Serializable]
         public class PlayerBirdSettings
@@ -25,6 +26,7 @@ namespace PigeonMail
         {
             public MailManager.Settings ManagerSettings;
             public MailUI.Settings UISettings;
+            public LetterTimer.Settings TimerSettings;
         }
 
         public override void InstallBindings()
@@ -36,6 +38,8 @@ namespace PigeonMail
             Container.BindInstance(PlayerBird.LimitSettings);
             Container.BindInstance(Mail.ManagerSettings);
             Container.BindInstance(Mail.UISettings);
+            Container.BindInstance(Mail.TimerSettings);
+            Container.BindInstance(CitySettings);
         }
     }
 }

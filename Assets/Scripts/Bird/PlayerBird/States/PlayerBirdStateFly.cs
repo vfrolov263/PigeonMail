@@ -7,6 +7,7 @@ namespace PigeonMail
     public class PlayerBirdStateFly : PlayerBirdAirState
     {
         private float _acc;
+        private AudioSource _flyAudioSource;
 
         public PlayerBirdStateFly(Settings settings) : base(settings)
         {
@@ -15,6 +16,7 @@ namespace PigeonMail
         public override void Start()
         {
             base.Start();
+            //_flyAudioSource = _audioPlayer.Play(_settings.flySound);
         }
         
         public override void Update()
@@ -36,6 +38,7 @@ namespace PigeonMail
 
         public override void Dispose()
         {
+            //_audioPlayer.Stop(_flyAudioSource);
         }
 
         public class Factory : PlaceholderFactory<PlayerBirdStateFly>

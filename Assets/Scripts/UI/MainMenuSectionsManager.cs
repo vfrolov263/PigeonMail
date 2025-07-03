@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,12 +15,15 @@ public class MainMenuSectionsManager : MonoBehaviour
     private void Start()
     {
         _continueButton.onClick.AddListener(OnContinuePressed);
+        _continueButton.AddComponent<SelectButtonOnEnable>();
         _startButton.onClick.AddListener(OnStartPressed);
         _settingsButton.onClick.AddListener(OnSettingsPressed);
         _aboutButton.onClick.AddListener(OnAboutPressed);
         _exitButton.onClick.AddListener(() => Application.Quit() );
         _backSettingsButton.onClick.AddListener(OnBackPressed);
+        _backSettingsButton.AddComponent<SelectButtonOnEnable>();
         _backAboutButton.onClick.AddListener(OnBackPressed);
+        _backAboutButton.AddComponent<SelectButtonOnEnable>();
     }
 
     private void OnContinuePressed()
