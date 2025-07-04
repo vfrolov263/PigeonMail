@@ -93,6 +93,39 @@ MonoBehaviour:
       Pause: Esc (Start/Pause)'
     m_Metadata:
       m_Items: []
+  - m_Id: 3450881712672768
+    m_Localized: Defeat, settlement destroyed...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3451078610079744
+    m_Localized: Victory, peace has come!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3471672416227328
+    m_Localized: Secrets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3474842857066496
+    m_Localized: Find the golden eggs to learn the pigeons story
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3477544009814016
+    m_Localized: 'Dear Orson! Grow big and strong!
+
+      We believe in you, your
+      mom and dad!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3477584342241280
+    m_Localized: "\rSo you've graduated.\r\nWe're so proud of you, son!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3477600884576256
+    m_Localized: 'My dear Orson, come back soon!
+
+      Kisses, Olivia.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

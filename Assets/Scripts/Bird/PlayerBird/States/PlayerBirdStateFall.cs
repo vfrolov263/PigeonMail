@@ -7,7 +7,7 @@ namespace PigeonMail
 {
     public class PlayerBirdStateFall : PlayerBirdAirState
     {
-        public PlayerBirdStateFall(Settings settings) : base(settings)
+        public PlayerBirdStateFall(Settings settings, BombHandler bombHandler) : base(settings, bombHandler)
         {
         }
 
@@ -26,16 +26,16 @@ namespace PigeonMail
             CheckLanding();
         }
 
-        public override void OnCollisionEnter(Vector3 moveDirection)
-        {
+        // public override void OnCollisionEnter(Vector3 moveDirection)
+        // {
             
-        }
+        // }
 
-        public override void Dispose()
-        {
-            // _playerBird.GetComponent<CharacterController>().enabled = true;
-            // _playerBird.GetComponent<Rigidbody>().isKinematic = true;
-        }
+        // public override void Dispose()
+        // {
+        //     // _playerBird.GetComponent<CharacterController>().enabled = true;
+        //     // _playerBird.GetComponent<Rigidbody>().isKinematic = true;
+        // }
 
         public class Factory : PlaceholderFactory<PlayerBirdStateFall>
         {

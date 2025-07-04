@@ -21,15 +21,14 @@ namespace PigeonMail
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
             Assert.IsNotNull(_navMeshAgent);
+            _animator = new(GetComponentInChildren<Animator>());
             _stateManager = new(this);
             _stateManager.ChangeState(HumanStates.Walking);
-            _animator = new(GetComponentInChildren<Animator>());
         }
 
         public void Move(Vector3 destination)
         {
             _navMeshAgent.SetDestination(destination);
-
         }
 
         public async UniTask MoveAsync(Vector3 destination)
@@ -45,6 +44,11 @@ namespace PigeonMail
             Destroy(_navMeshAgent);
             _navMeshAgent = null;
             _route.Clear();
+        }
+
+        public void OnStateChanged(HumanStates state)
+        {
+            _animator.Refresh(state);
         }
 
         public Waypoint CurrentWaypoint

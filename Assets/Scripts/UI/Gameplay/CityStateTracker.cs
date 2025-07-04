@@ -67,37 +67,64 @@ namespace PigeonMail
 
         private void OnTrackableLetterStatusChanged(TrackableLetterStatusChangedSignal signal)
         {
-            if (signal.letter.To.GetComponent<Clerk>().CityFlagColor != _cityColor)
+            //Debug.Log($"Status: {signal.letter.Status}, ColorTo: {signal.letter.To.GetComponent<Clerk>().CityFlagColor}, ColorCity: {_cityColor}");
+            if (signal.letter.Status != LetterStatus.Delivered || signal.letter.To.GetComponent<Clerk>().CityFlagColor != _cityColor)
                 return;
 
-            if (signal.letter.Status == LetterStatus.Delivered)
-            {
+           // if (signal.letter.Status == LetterStatus.Delivered)
+          //  {
                 _letters++;
                 ProgressMail();
-            }
-            else if (signal.letter.Status == LetterStatus.Lost)
-            {
-                _health--;
-                ProgressHealth();
-            }
+           // }
+            // else if (signal.letter.Status == LetterStatus.Lost)
+            // {
+            //     _health--;
+            //     ProgressHealth();
+            // }
+        }
+
+        public void Hit()
+        {
+            _health--;
+            ProgressHealth();
         }
 
         private void ProgressHealth()
         {
+            if (_health < 0)
+                return;
+
             _healthBar[_health].color = _settings.noneColor;
             _signalBus.Fire(new CityDamageSignal() { cityTracker = this });
-
-            if (_health == 1)
-                _health = 1;
         }
 
         private void ProgressMail()
         {
+            if (_letters > _settings.mailCapacity)
+                return;
+                
             _lettersBar[_letters - 1].color = Color.white;
             _signalBus.Fire(new CityReceivedLetterSignal() { cityTracker = this });
+        }
 
-            if (_letters >= _settings.mailCapacity)
-                _letters = 1;
+        public void Initialise(int health, int letters)
+        {
+            _health = health;
+            _letters = letters;
+            InitialiseHelth();
+            InitialiseMail();
+        }
+
+        private void InitialiseHelth()
+        {
+            for (int i = _health; i < _settings.health; i++)
+                 _healthBar[i].color = _settings.noneColor;
+        }
+
+        private void InitialiseMail()
+        {
+            for (int i = 0; i < _letters; i++)
+                 _lettersBar[i].color = Color.white;
         }
 
         [Serializable]

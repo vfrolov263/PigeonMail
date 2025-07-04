@@ -24,3 +24,9 @@ MonoBehaviour:
     inversion: vertical_inversion
     volume: volume
     sensitivity: controls_sensitivity
+    redCity: red_city
+    blueCity: blue_city
+    yellowCity: yellow_city
+    secrets: secrets
+    cannonballs: cannonballs
+    easterEgg: easter_egg

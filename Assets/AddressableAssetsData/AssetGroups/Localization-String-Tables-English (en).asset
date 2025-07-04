@@ -15,6 +15,18 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (en)
   m_GUID: b12f51362fcd29e48bad00f26156b7fe
   m_SerializeEntries:
+  - m_GUID: 017c5bcb88eba4a44804e16ea46ef49b
+    m_Address: IntroText_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39b7748a5f28f8a449f74f97af6d8e53
+    m_Address: EndText_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3cd63dc7ac7bd8f439f05a70952e2877
     m_Address: TutorialText_en
     m_ReadOnly: 1
@@ -26,12 +38,14 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d225af076f1e946488fb6c229fa50097
     m_Address: UIText_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: ef185af4e6f336c4692626ee21d3dd33, type: 2}

@@ -10,7 +10,7 @@ namespace PigeonMail
         private PlayerBirdStates _playerBirdState;
 
         [Inject]
-        private void Construct(PlayerBird playerBird)
+        public void Construct(PlayerBird playerBird)
         {
             _animator = playerBird.Animator;
         }

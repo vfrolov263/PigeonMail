@@ -83,6 +83,34 @@ MonoBehaviour:
     m_Key: ALL_CONTROLS
     m_Metadata:
       m_Items: []
+  - m_Id: 3450881712672768
+    m_Key: GAME_OVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3451078610079744
+    m_Key: WIN_GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3471672416227328
+    m_Key: SECRETS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3474842857066496
+    m_Key: ABOUT_SECRETS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3477544009814016
+    m_Key: EASTER_EGG_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3477584342241280
+    m_Key: EASTER_EGG_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3477600884576256
+    m_Key: EASTER_EGG_3
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

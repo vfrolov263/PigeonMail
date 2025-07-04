@@ -17,11 +17,13 @@ namespace PigeonMail
         private HumanState _currentState;
         private HumanStateStand _standState;
         private HumanStateWalk _walkState;
+        private Human _human;
 
         public HumanStateManager(Human human)
         {
-            _standState = new(human, this);
-            _walkState = new(human, this);
+            _human = human;
+            _standState = new(_human, this);
+            _walkState = new(_human, this);
         }
 
          public void ChangeState(HumanStates state)
@@ -40,6 +42,7 @@ namespace PigeonMail
                     throw Assert.CreateException();
             }
 
+            _human.OnStateChanged(state);
             _currentState?.Start();
         }
     }

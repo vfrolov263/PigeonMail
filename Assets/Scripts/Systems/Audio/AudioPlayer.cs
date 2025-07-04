@@ -7,113 +7,87 @@ using Zenject;
 
 namespace PigeonMail
 {
-    public class AudioPlayer : IInitializable, IDisposable
+    public class AudioPlayer : MonoBehaviour
     {
-        Camera _camera;
         Settings _settings;
-        AudioSource _audioSource;
+        [SerializeField]
+        AudioSource _newLetterSound, _interactionWithScribeSound, _outOfTimeSound, _cityDamageSound;
+        [SerializeField]
+        AudioSource _playerBirdTakeoffSound, _playerBirdFlapsSound;
+        [SerializeField]
+        AudioSource _natureSound;
 
-        private class AduioSoftBrake
+        [Inject]
+        public void Construct(SignalBus signalBus, Settings settings)
         {
-            public UniTask task;
-            public CancellationTokenSource cancelToken;
-
-            public AduioSoftBrake(UniTask task, CancellationTokenSource cancelToken)
-            {
-                this.task = task;
-                this.cancelToken = cancelToken;
-            }
-        }
-
-        private Dictionary<AudioClip, AudioSource> _loopedAudio = new();
-        private Dictionary<AudioClip, AduioSoftBrake> _softStopedAudio = new();
-
-        public AudioPlayer(Camera camera, Settings settings)
-        {
-            _camera = camera;
+            signalBus.Subscribe<TrackableLetterStatusChangedSignal>(OnTrackableLetterStatusChanged);
+            signalBus.Subscribe<CityDamageSignal>(OnCityDamage);
             _settings = settings;
         }
 
-        public void Initialize()
+        private void Awake()
         {
-            _audioSource = _camera.GetComponent<AudioSource>();
+            _newLetterSound.volume = _settings.volume;
+            _interactionWithScribeSound.volume = _settings.volume;
+            _outOfTimeSound.volume = _settings.volume;
+            _cityDamageSound.volume = _settings.volume;
+            _playerBirdTakeoffSound.volume = _settings.volume;
+            _natureSound.volume = _settings.volume;
+            // _playerBirdSoar.volume = _settings.volume;
+            _playerBirdFlapsSound.volume = _settings.volume;
         }
 
-        public void PlayShot(AudioClip clip)
+        private void OnTrackableLetterStatusChanged(TrackableLetterStatusChangedSignal signal)
         {
-            //_audioSource.PlayOneShot(clip, _settings.volume);
-        }
-
-        public AudioSource Play(AudioClip clip)
-        {
-            // RemoveLoopedAudio(clip);
-            // var newLoopedAudio = _camera.gameObject.AddComponent<AudioSource>();
-            // newLoopedAudio.clip = clip;
-            // newLoopedAudio.loop = true;
-            // newLoopedAudio.Play();
-            // _loopedAudio.Add(clip, newLoopedAudio);
-            // return newLoopedAudio;
-            return null;
-        }
-
-        private bool RemoveLoopedAudio(AudioClip clip)
-        {
-            if (_loopedAudio.ContainsKey(clip))
+            switch (signal.letter.Status)
             {
-                GameObject.Destroy(_loopedAudio[clip]);
-                _loopedAudio.Remove(clip);
-                Debug.Log($"Remove looped audio. Now contains {_loopedAudio.Count} looped audio's.");
-                return true;
+                case LetterStatus.Ready:
+                    _newLetterSound.Play();
+                    break;
+                case LetterStatus.Delivering:
+                case LetterStatus.Delivered:
+                    _interactionWithScribeSound.Play();
+                    break;
+                case LetterStatus.Lost:
+                    _outOfTimeSound.Play();
+                    break;
             }
-
-            return false;
         }
 
-        public void Stop(AudioSource source)
+        public void BirdPlay(PlayerBirdStates state)
         {
-          //  RemoveLoopedAudio(source.clip);
-            //source.Stop();
-            //GameObject.Destroy(source);
-        }
-
-        public void SoftStop(AudioSource source)
-        {
-            // if (_softStopedAudio.ContainsKey(source.clip))
-            // {
-            //     _softStopedAudio[source.clip].cancelToken.Cancel();
-            //     _softStopedAudio.Remove(source.clip);
-            //     GameObject.Destroy(source);
-            //     //Debug.Log($"Destroy soft {_softStopedAudio.Count}!");
-            // }
-
-            // _loopedAudio.Remove(source.clip);
-            // CancellationTokenSource cancelToken = new();
-            // _softStopedAudio.Add(source.clip, new AduioSoftBrake(StopAudioAsync(source, cancelToken), cancelToken));
-        }
-
-        public async UniTask StopAudioAsync(AudioSource source, CancellationTokenSource cancelToken)
-        {
-            try
+            switch (state)
             {
-                while (source.volume > 0f)
-                {
-                    source.volume -= _settings.decayRate * Time.fixedDeltaTime;
-                    await UniTask.WaitForFixedUpdate(cancelToken.Token);
-                }
+                case PlayerBirdStates.TakingOff:
+                    _playerBirdTakeoffSound.Play();
+                    break;
+                case PlayerBirdStates.Flying:
+                    _playerBirdFlapsSound.Play();
+                    break;
             }
-            catch (OperationCanceledException e)
-            {
-                Debug.Log(e.Message);
-            }
-
-            _softStopedAudio.Remove(source.clip);
-            GameObject.Destroy(source);
+            //_oneShotSound.PlayOneShot(clip);
         }
 
-        public void Dispose()
+        public void BirdStop()
         {
-            foreach (var i in _softStopedAudio)
-                i.Value.cancelToken.Cancel();
+            _playerBirdFlapsSound.Stop();
+        }
+
+        public bool BackgroundPlaying
+        {
+            get
+            {
+                return _natureSound.volume > 0;
+            }
+            set
+            {
+                _natureSound.volume = value ? _settings.volume : 0;
+            }
+        }
+
+        private void OnCityDamage()
+        {
+            _cityDamageSound.Play();
         }
 
         [Serializable]

@@ -20,7 +20,17 @@ namespace PigeonMail
             _state = state;
 
             if (_animator != null)
-                _animator.SetInteger("State", (int)_state);
+            {
+                switch (_state)
+                {
+                    case HumanStates.Walking:
+                        _animator.SetTrigger("Walk");
+                        break;
+                    case HumanStates.Standing:
+                        _animator.SetTrigger("Stop");
+                        break;
+                }
+            }
         }
     }
 }

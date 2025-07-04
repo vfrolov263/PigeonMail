@@ -8,6 +8,7 @@ TagManager:
   - Wind
   - Egg
   - TutorialTrigger
+  - GoldenEgg
   layers:
   - Default
   - TransparentFX

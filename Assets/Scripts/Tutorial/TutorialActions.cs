@@ -14,17 +14,16 @@ public class TutorialActions : MonoBehaviour
     private GameObject _yellowCityTrigger, _redCityTrigger, _blueCityTrigger;
     [SerializeField]
     private int fromCityTriggerIndex, fromClerkTriggerIndex, toCityTriggerIndex, toClerkTriggerIndex;
-
     private int _currentLesson;
     private SignalBus _signalBus;
-    private GameObject _mailManager;
+    private MailManager _mailManager;
     private TimeScaler _timeScaler;
 
     [Inject]
     public void Construct(SignalBus signalBus, MailManager mailManager, TimeScaler timeScaler)
     {
         _signalBus = signalBus;
-        _mailManager = mailManager.gameObject;
+        _mailManager = mailManager;
         _timeScaler = timeScaler;
     }
 
@@ -116,12 +115,22 @@ public class TutorialActions : MonoBehaviour
 
     public void StartMailService()
     {
-        _mailManager.SetActive(true);
+        _mailManager.gameObject.SetActive(true);
+    }
+
+    public void StopTimer()
+    {
+        _mailManager.IsTimeLimited = false;
+    }
+
+    public void StartTimer()
+    {
+        _mailManager.IsTimeLimited = true;
     }
 
     public void FinishTutorial()
     {
-        _mailManager.SetActive(true);
+        _mailManager.gameObject.SetActive(true);
 
         if (_timeScaler.IsPaused)
             _timeScaler.PlayGame();

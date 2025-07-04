@@ -11,6 +11,7 @@ namespace PigeonMail
         public PlayerBirdSettings PlayerBird;
         public MailSettings Mail;
         public CityStateTracker.Settings CitySettings;
+        public CannoballsDamager.Settings CannoballsSettings;
 
         [Serializable]
         public class PlayerBirdSettings
@@ -19,6 +20,7 @@ namespace PigeonMail
             public PlayerBirdGroundedState.Settings GroundSettings;
             public PlayerBirdStateTakeOff.Settings TakeOffSettings;
             public PlayerBirdLimiter.Settings LimitSettings;
+            public TailHandler.Settings EffectsSettings;
         }
 
         [Serializable]
@@ -36,10 +38,12 @@ namespace PigeonMail
             Container.BindInstance(PlayerBird.GroundSettings);
             Container.BindInstance(PlayerBird.TakeOffSettings);
             Container.BindInstance(PlayerBird.LimitSettings);
+            Container.BindInstance(PlayerBird.EffectsSettings);
             Container.BindInstance(Mail.ManagerSettings);
             Container.BindInstance(Mail.UISettings);
             Container.BindInstance(Mail.TimerSettings);
             Container.BindInstance(CitySettings);
+            Container.BindInstance(CannoballsSettings);
         }
     }
 }

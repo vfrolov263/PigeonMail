@@ -157,10 +157,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 27339662905344
-    m_Localized: "\rKeep up the good work. Deliver all the letters on time so that
-      peace can reign on the continent. But remember - your studies are over. You
-      have time constraints now. If you fail to deliver the letters on time, you
-      will lose the settlement..."
+    m_Localized: The training is over, now you have time limits for delivering the
+      letter. If you do not make it in time, a shootout between settlements will
+      begin. The settlements will begin to collapse... You can stop the destruction
+      by delivering letters on time! Deliver all the letters and fill the scale in
+      each settlement. Watch the city status above its flags.
     m_Metadata:
       m_Items: []
   references:

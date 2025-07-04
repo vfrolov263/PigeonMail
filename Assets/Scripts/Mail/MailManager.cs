@@ -29,6 +29,8 @@ namespace PigeonMail
             _letterTimer = letterTimer;
         }
 
+        public bool IsTimeLimited { get; set; } = true;
+
         private void Start()
         {
             Invoke("CreateLetter", _settings.timeBeforeSpawnNew);
@@ -43,7 +45,7 @@ namespace PigeonMail
                 switch (signal.letter.Status)
                 {
                     case LetterStatus.Delivering:
-                        _letterTimer.gameObject.SetActive(true);
+                        _letterTimer.gameObject.SetActive(IsTimeLimited);
                         break;
                     case LetterStatus.Delivered:
                     case LetterStatus.Lost:
@@ -81,7 +83,7 @@ namespace PigeonMail
             while (to == from);
 
             _letters.Add(_letterFactory.Create(_clerks[from].transform, _clerks[to].transform, 1f));
-            _audioPlayer.PlayShot(_settings.newLetterSound);
+           // _audioPlayer.PlayShot(_settings.newLetterSound);
            // _letters.Add(new(this, _clerks[from].transform, _clerks[to].transform, 1f));
         }
 

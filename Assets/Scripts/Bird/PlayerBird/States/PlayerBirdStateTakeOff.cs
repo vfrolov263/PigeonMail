@@ -18,7 +18,8 @@ namespace PigeonMail
         public override void Start()
         {
             ReadyToFly();
-            _audioPlayer.PlayShot(_settings.takeoffSound);
+            _audioPlayer.BirdPlay(PlayerBirdStates.TakingOff);
+           // _audioPlayer.PlayShot(_settings.takeoffSound);
         }
 
         public override void Update()
@@ -46,7 +47,7 @@ namespace PigeonMail
             public Vector2 speed;
             public float moveDelayInSeconds;
             public float moveTimeInSeconds;
-            public AudioClip takeoffSound;
+           // public AudioClip takeoffSound;
         }
     }
 }

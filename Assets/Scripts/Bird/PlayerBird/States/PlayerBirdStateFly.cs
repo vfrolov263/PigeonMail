@@ -9,13 +9,14 @@ namespace PigeonMail
         private float _acc;
         private AudioSource _flyAudioSource;
 
-        public PlayerBirdStateFly(Settings settings) : base(settings)
+        public PlayerBirdStateFly(Settings settings, BombHandler bombHandler) : base(settings, bombHandler)
         {
         }
 
         public override void Start()
         {
             base.Start();
+            _audioPlayer.BirdPlay(PlayerBirdStates.Flying);
             //_flyAudioSource = _audioPlayer.Play(_settings.flySound);
         }
         
@@ -38,6 +39,8 @@ namespace PigeonMail
 
         public override void Dispose()
         {
+            base.Dispose();
+            _audioPlayer.BirdStop();
             //_audioPlayer.Stop(_flyAudioSource);
         }
 

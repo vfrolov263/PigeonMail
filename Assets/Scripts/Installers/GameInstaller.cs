@@ -55,7 +55,7 @@ namespace PigeonMail
 
         private void InstallSystems()
         {
-            Container.BindInterfacesAndSelfTo<AudioPlayer>().AsSingle();
+            //Container.BindInterfacesAndSelfTo<AudioPlayer>().AsSingle();
             Container.Bind<TimeScaler>().AsSingle();
         }
 

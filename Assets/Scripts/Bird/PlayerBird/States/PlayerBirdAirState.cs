@@ -9,6 +9,7 @@ namespace PigeonMail
     public abstract class PlayerBirdAirState : PlayerBirdState
     {
         protected readonly Settings _settings;
+        private BombHandler _bombHandler;
 
         private struct RotationZParams
         {
@@ -22,9 +23,10 @@ namespace PigeonMail
         // settingsRotationZAccuracyOffset = 200f, settingsRotationZAccuracyPerDelta = 850f;
         private RotationZParams _rotationZ;
 
-        public PlayerBirdAirState(Settings settings)
+        public PlayerBirdAirState(Settings settings, BombHandler bombHandler)
         {
             _settings = settings;
+            _bombHandler = bombHandler;
         }
 
         public override void Start()
@@ -35,6 +37,8 @@ namespace PigeonMail
 
             if (_playerBird.Speed < _settings.minSpeed)
                 _playerBird.Speed = _settings.minSpeed;
+
+            _input.JumpActions += DropBomb;
         }
 
         private float BringAnlge(float angle)
@@ -208,6 +212,16 @@ namespace PigeonMail
                 _playerBird.ChangeState(PlayerBirdStates.Falling);
         }
 
+        public override void Dispose()
+        {
+            _input.JumpActions -= DropBomb;
+        }
+
+        private void DropBomb()
+        {
+            _bombHandler.Drop();
+        }
+
         [Serializable]
         public class Settings
         {
@@ -216,7 +230,7 @@ namespace PigeonMail
             public Vector3 rotationSpeed;
             public float minAngleX, maxAngleX, maxAngleZ;
             public float gravityForce, gravityFuncPower, gravityFallForce;
-            public AudioClip flySound, soarSound;
+          //  public AudioClip flySound, soarSound;
         }
     }
 }

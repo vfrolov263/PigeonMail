@@ -7,9 +7,9 @@ namespace PigeonMail
     public class PlayerBirdStateSoar : PlayerBirdAirState
     {
         private float _deceleration;
-        private AudioSource _soarAudioSource;
+        //private AudioSource _soarAudioSource;
 
-        public PlayerBirdStateSoar(Settings settings) : base(settings)
+        public PlayerBirdStateSoar(Settings settings, BombHandler bombHandler) : base(settings, bombHandler)
         {
         }
 
@@ -40,10 +40,10 @@ namespace PigeonMail
             0f));
         }
 
-        public override void Dispose()
-        {
-            //_audioPlayer.Stop(_soarAudioSource);
-        }
+        // public override void Dispose()
+        // {
+        //     //_audioPlayer.Stop(_soarAudioSource);
+        // }
 
         public class Factory : PlaceholderFactory<PlayerBirdStateSoar>
         {

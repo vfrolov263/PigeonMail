@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: EndText_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: fa213f4124efe6b4db2081a6607939fb, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4385492992
+    m_Localized: "\rWow, I haven't seen so many people in a long time!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66155008000
+    m_Localized: Well, buddy, I'm off! Don't forget to feed the pigeon, he's worked
+      hard!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 209734422528
+    m_Localized: "\rYes, the residents of all three settlements are here!\nAnd finally
+      they use a fork, not a pitchfork!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 255741743104
+    m_Localized: "\rkrlk!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346636505088
+    m_Localized: "\rWho wants some fresh kvass?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54821136977920
+    m_Localized: Krlklkl.....
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54781236563968
+    m_Localized: "\rI can't believe it... Well, at least the pigeon survived."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54488520282112
+    m_Localized: Well, we barely escaped! The residents couldn't come to an agreement
+      and killed each other!
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

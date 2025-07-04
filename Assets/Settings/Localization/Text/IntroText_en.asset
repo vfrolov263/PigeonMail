@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: IntroText_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: f8d2d132afa93f14fa168bca2500059f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4783951872
+    m_Localized: "\rHow did we end up on this island? The locals are so hostile..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161411846144
+    m_Localized: 'Yeah, I hope in the future people will come up with a better way
+      to communicate,
+
+      but for now, get the pigeon!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 276969115648
+    m_Localized: 'That''s right! Our goal is to establish peace between the settlements,
+
+      for
+      this we need to send a conciliatory letter.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346699419648
+    m_Localized: krlkl?
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

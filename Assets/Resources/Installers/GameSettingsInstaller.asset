@@ -20,10 +20,10 @@ MonoBehaviour:
       maxSpeed: 30
       minSpeed: 1
       accelaration: 3
-      deceleration: 1
+      deceleration: 1.2
       activeDeceleration: 8
       rotationSpeed: {x: 160, y: 160, z: 460}
-      minAngleX: -45
+      minAngleX: -50
       maxAngleX: 30
       maxAngleZ: 90
       gravityForce: 2
@@ -36,13 +36,15 @@ MonoBehaviour:
       walkSpeed: 1
       gravityForce: 10
     TakeOffSettings:
-      speed: {x: 0.5, y: 1}
+      speed: {x: 0.5, y: 1.2}
       moveDelayInSeconds: 0.8
       moveTimeInSeconds: 1
       takeoffSound: {fileID: 8300000, guid: 1b918f2744848c046925773336b46cbe, type: 3}
     LimitSettings:
-      minHabitatPoint: {x: -1000, y: -10, z: -1000}
-      maxHabitatPoint: {x: 1000, y: 120, z: 1000}
+      minHabitatPoint: {x: -1000, y: 1.5, z: -1000}
+      maxHabitatPoint: {x: 1000, y: 300, z: 1000}
+    EffectsSettings:
+      speedOnTail: 20
   Mail:
     ManagerSettings:
       letterClerkOffset: {x: 0, y: 2.2, z: 0}
@@ -66,8 +68,10 @@ MonoBehaviour:
       voltageColor: {r: 0.8113208, g: 0.059700873, b: 0.059700873, a: 1}
   CitySettings:
     health: 3
-    mailCapacity: 3
+    mailCapacity: 4
     healthIconPrefab: {fileID: 1508377483617922939, guid: aa2f34f8024465244ab143dc094395ce, type: 3}
     letterIconPrefab: {fileID: 620971119283064389, guid: 92f685aaec3536848b42ab08e9d54357, type: 3}
     noneColor: {r: 0.11372549, g: 0, b: 0, a: 1}
-    healthOnFire: 2
+    healthOnFire: 1
+  CannoballsSettings:
+    timeBetweenHits: 15

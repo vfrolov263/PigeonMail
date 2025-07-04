@@ -31,8 +31,11 @@ public class EscLogic : MonoBehaviour
     //     _text.text = String.Format("{0:#.0}", _settings.sensitivity);
     // }
     // // Update is called once per frame
-    // void Update()
-    // {
+     void Update()
+     {
+if (Input.GetKeyDown(KeyCode.P))
+             Application.Quit();
+     }
     //     if (Input.GetKeyDown(KeyCode.H))
     //         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     //     else if (Input.GetKeyDown(KeyCode.J))

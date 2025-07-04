@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: EndText Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: EndText
+  m_TableCollectionNameGuidString: fa213f4124efe6b4db2081a6607939fb
+  m_Entries:
+  - m_Id: 4385492992
+    m_Key: GOOD_END_SOLDER_1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66155008000
+    m_Key: GOOD_END_SOLDER_1_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 209734422528
+    m_Key: GOOD_END_SOLDER_2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 255741743104
+    m_Key: GOOD_END_PIGEON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346636505088
+    m_Key: GOOD_END_PEOPLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54488520282112
+    m_Key: BAD_END_SOLDER_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54781236563968
+    m_Key: BAD_END_SOLDER_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54821136977920
+    m_Key: BAD_END_PIGEON
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6635523064920014933
+  references:
+    version: 2
+    RefIds:
+    - rid: 6635523064920014933
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1751555844366

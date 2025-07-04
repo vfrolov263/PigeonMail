@@ -35,5 +35,7 @@ namespace PigeonMail
             Time.timeScale = 1f;
             _playerBird.enabled = true;
         }
+
+        //private void Player
     }
 }
