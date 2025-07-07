@@ -7,7 +7,7 @@ namespace PigeonMail
         [SerializeField]
         GameObject _bombPrefab;
         [SerializeField]
-        private float _timeForSpawnBomb = 4f;
+        private float _timeForSpawnBomb = 2.5f;
         private bool _readyForDrop = true;
 
         public void Drop()

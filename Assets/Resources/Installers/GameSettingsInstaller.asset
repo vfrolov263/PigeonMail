@@ -22,15 +22,13 @@ MonoBehaviour:
       accelaration: 3
       deceleration: 1.2
       activeDeceleration: 8
-      rotationSpeed: {x: 160, y: 160, z: 460}
+      rotationSpeed: {x: 160, y: 160, z: 440}
       minAngleX: -50
       maxAngleX: 30
       maxAngleZ: 90
       gravityForce: 2
       gravityFuncPower: 0.5
       gravityFallForce: 10
-      flySound: {fileID: 8300000, guid: def5eca3e08568f4fa8cef29118ee69e, type: 3}
-      soarSound: {fileID: 8300000, guid: 64497b1f269769d45b97454928ac30f3, type: 3}
     GroundSettings:
       rotationSpeed: 400
       walkSpeed: 1
@@ -39,7 +37,6 @@ MonoBehaviour:
       speed: {x: 0.5, y: 1.2}
       moveDelayInSeconds: 0.8
       moveTimeInSeconds: 1
-      takeoffSound: {fileID: 8300000, guid: 1b918f2744848c046925773336b46cbe, type: 3}
     LimitSettings:
       minHabitatPoint: {x: -1000, y: 1.5, z: -1000}
       maxHabitatPoint: {x: 1000, y: 300, z: 1000}
@@ -61,10 +58,10 @@ MonoBehaviour:
       giveGoal: {fileID: 21300000, guid: 7fcf8d81b3720d74eae0ba4a26638dcb, type: 3}
       getGoal: {fileID: 21300000, guid: f0a9975766a8cba42a4c512e6d78b176, type: 3}
     TimerSettings:
-      initialDeliveryTime: 30
-      initialDeliveryTimeDelta: 20
+      initialDeliveryTime: 180
+      initialDeliveryTimeDelta: 15
       initialDeliveryTimeMin: 30
-      voltageTime: 15
+      voltageTime: 10
       voltageColor: {r: 0.8113208, g: 0.059700873, b: 0.059700873, a: 1}
   CitySettings:
     health: 3
@@ -74,4 +71,4 @@ MonoBehaviour:
     noneColor: {r: 0.11372549, g: 0, b: 0, a: 1}
     healthOnFire: 1
   CannoballsSettings:
-    timeBetweenHits: 15
+    timeBetweenHits: 25

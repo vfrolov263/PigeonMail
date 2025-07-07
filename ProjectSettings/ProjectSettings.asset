@@ -16,7 +16,7 @@ PlayerSettings:
   productName: PigeonMail
   defaultCursor: {fileID: 2800000, guid: 2d835be63db7166479f8bab2244a75ba, type: 3}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.2679245, g: 0.2542755, b: 0.25768775, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.5849056, g: 0.51979345, b: 0.51979345, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 0
   m_SplashScreenOverlayOpacity: 1

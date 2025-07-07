@@ -100,11 +100,12 @@ namespace PigeonMail
 
         private void ProgressMail()
         {
+            _signalBus.Fire(new CityReceivedLetterSignal() { cityTracker = this });
             if (_letters > _settings.mailCapacity)
                 return;
                 
             _lettersBar[_letters - 1].color = Color.white;
-            _signalBus.Fire(new CityReceivedLetterSignal() { cityTracker = this });
+            //_signalBus.Fire(new CityReceivedLetterSignal() { cityTracker = this });
         }
 
         public void Initialise(int health, int letters)
