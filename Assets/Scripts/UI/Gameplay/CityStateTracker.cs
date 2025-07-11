@@ -73,8 +73,10 @@ namespace PigeonMail
 
            // if (signal.letter.Status == LetterStatus.Delivered)
           //  {
+            if (_letters < _settings.mailCapacity)
                 _letters++;
-                ProgressMail();
+
+            ProgressMail();
            // }
             // else if (signal.letter.Status == LetterStatus.Lost)
             // {
@@ -101,8 +103,8 @@ namespace PigeonMail
         private void ProgressMail()
         {
             _signalBus.Fire(new CityReceivedLetterSignal() { cityTracker = this });
-            if (_letters > _settings.mailCapacity)
-                return;
+            // if (_letters > _settings.mailCapacity)
+            //     return;
                 
             _lettersBar[_letters - 1].color = Color.white;
             //_signalBus.Fire(new CityReceivedLetterSignal() { cityTracker = this });
@@ -112,11 +114,11 @@ namespace PigeonMail
         {
             _health = health;
             _letters = letters;
-            InitialiseHelth();
+            InitialiseHealth();
             InitialiseMail();
         }
 
-        private void InitialiseHelth()
+        private void InitialiseHealth()
         {
             for (int i = _health; i < _settings.health; i++)
                  _healthBar[i].color = _settings.noneColor;

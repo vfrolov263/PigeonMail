@@ -29,7 +29,9 @@ namespace PigeonMail
 
         private void OnDisable()
         {
-            _audioPlayer.BackgroundPlaying = true;
+            if (_audioPlayer != null)
+                _audioPlayer.BackgroundPlaying = true;
+                
             StopAllCoroutines();
         }
 

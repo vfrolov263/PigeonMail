@@ -33,6 +33,13 @@ namespace PigeonMail
             get;
         }
        
+        private void OnDisable()
+        {
+            Axes = Vector2.zero;
+            PointerDelta = Vector2.zero;
+            DirectionDelta = Vector2.zero;
+        }
+
         public void OnMove(InputValue value)
         {
             Axes = value.Get<Vector2>();

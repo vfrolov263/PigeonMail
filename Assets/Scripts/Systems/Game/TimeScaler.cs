@@ -6,10 +6,12 @@ namespace PigeonMail
     public class TimeScaler
     {
         private PlayerBird _playerBird;
+        private PlayerInput _playerInput;
 
-        public TimeScaler(PlayerBird playerBird)
+        public TimeScaler(PlayerBird playerBird, PlayerInput playerInput)
         {
             _playerBird = playerBird;
+            _playerInput = playerInput;
         }
 
         public bool IsPaused
@@ -25,6 +27,7 @@ namespace PigeonMail
             _playerBird.enabled = false;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            _playerInput.gameObject.SetActive(false);
             Time.timeScale = 0f;
         }
 
@@ -33,6 +36,7 @@ namespace PigeonMail
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
+            _playerInput.gameObject.SetActive(true);
             _playerBird.enabled = true;
         }
 

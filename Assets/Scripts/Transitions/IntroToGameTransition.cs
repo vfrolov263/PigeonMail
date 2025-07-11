@@ -9,6 +9,6 @@ public class IntroToGameTransition : MonoBehaviour
     {
         _input.SetActive(true);
         _tutorial.SetActive(true);
-        Destroy(transform.parent.gameObject);
+        Destroy(transform.parent.parent.gameObject);
     }
 }

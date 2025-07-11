@@ -26,11 +26,12 @@ namespace PigeonMail
         private Dictionary<CityColor, string> _cityPrefsKeys = new();
         private bool _loading = false;
         private ProjectSettingsInstaller.SavedPrefsNames _savedPrefsNames;
+        private AudioPlayer.Settings _audioSettings;
 
         
         [Inject]
         public void Construct(CityStateTracker.Settings settings, 
-            ProjectSettingsInstaller.SavedPrefsNames savedPrefsNames, SignalBus signalBus)
+            ProjectSettingsInstaller.SavedPrefsNames savedPrefsNames, AudioPlayer.Settings audioSettings, SignalBus signalBus)
         {
             _settings = settings;
             signalBus.Subscribe<CityDamageSignal>(OnCityDamage);
@@ -40,6 +41,7 @@ namespace PigeonMail
             _cityPrefsKeys.Add(CityColor.Yellow, savedPrefsNames.yellowCity);
             _cityPrefsKeys.Add(CityColor.Blue, savedPrefsNames.blueCity);
             _savedPrefsNames = savedPrefsNames;
+            _audioSettings = audioSettings;
         }
 
         private void Awake()
@@ -122,6 +124,9 @@ namespace PigeonMail
 
             if (PlayerPrefs.HasKey(_savedPrefsNames.cannonballs))
                 _cannonballs.SetActive(true);
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void ClearProgress()
@@ -130,13 +135,11 @@ namespace PigeonMail
             PlayerPrefs.DeleteKey(_cityPrefsKeys[CityColor.Yellow]);
             PlayerPrefs.DeleteKey(_cityPrefsKeys[CityColor.Blue]);
             PlayerPrefs.DeleteKey(_savedPrefsNames.cannonballs);
+            PlayerPrefs.DeleteKey(_savedPrefsNames.timer);
+            PlayerPrefs.DeleteKey(_savedPrefsNames.difficulty);
         }
 
-        private void GameOver()
-        {
-            EndGame();
-            Instantiate(_badEndPrefab);
-        }
+        private void GameOver() => PlayEndCutscene(_badEndPrefab);
 
         private void EndGame()
         {
@@ -172,10 +175,7 @@ namespace PigeonMail
                 PlayerPrefs.DeleteKey(_savedPrefsNames.cannonballs);
             }
 
-            _cityFilled[signal.cityTracker.FlagColor] = signal.cityTracker.Letters == _settings.mailCapacity;
-
-            //  foreach (var i in _cityFilled)
-            //     Debug.Log($"City {i.Key} is {i.Value}");
+            _cityFilled[signal.cityTracker.FlagColor] = signal.cityTracker.Letters >= _settings.mailCapacity;
             CheckForWin(signal.cityTracker);
         }
 
@@ -195,10 +195,15 @@ namespace PigeonMail
                 SaveProgress(cityTracker);
         }
 
-        private void Win()
+        private void Win() => PlayEndCutscene(_goodEndPrefab);
+
+        private void PlayEndCutscene(GameObject cutscenePrefab)
         {
             EndGame();
-            Instantiate(_goodEndPrefab);
+            var endCutsceneAudio = Instantiate(cutscenePrefab).GetComponent<AudioSource>();
+          
+            if (endCutsceneAudio != null)
+                endCutsceneAudio.volume = _audioSettings.volume;
         }
 
         [Serializable]

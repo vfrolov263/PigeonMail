@@ -17,8 +17,9 @@ namespace PigeonMail
         public class Settings
         {
             public bool verticalInversion;
-            [Range(.1f, 1f)]
+            [Range(.2f, 1.6f)]
             public float sensitivity;
+            public bool gamepadConnected;
         }
     }
 }

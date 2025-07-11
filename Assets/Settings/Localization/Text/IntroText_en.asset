@@ -23,21 +23,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 161411846144
-    m_Localized: 'Yeah, I hope in the future people will come up with a better way
-      to communicate,
-
-      but for now, get the pigeon!'
+    m_Localized: Yeah, I hope in the future people will come up with a better way
+      to communicate, but for now, get the pigeon!
     m_Metadata:
       m_Items: []
   - m_Id: 276969115648
-    m_Localized: 'That''s right! Our goal is to establish peace between the settlements,
-
-      for
-      this we need to send a conciliatory letter.'
+    m_Localized: That's right! Our goal is to establish peace between the settlements,
+      for this we need to send a conciliatory letter.
     m_Metadata:
       m_Items: []
   - m_Id: 346699419648
-    m_Localized: krlkl?
+    m_Localized: Coo?
     m_Metadata:
       m_Items: []
   references:

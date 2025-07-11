@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+using System.Collections.Generic;
 using PigeonMail;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,12 +9,24 @@ using Zenject;
 public class MainMenuSectionsManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _mainScreen, _settingsScreen, _loadingScreen, _aboutScreen, _secretsScreen;
+    private GameObject _mainScreen, _settingsScreen, _loadingScreen, _aboutScreen, _secretsScreen, _difficultyScreen;
     [SerializeField]
     private Button _continueButton, _startButton, _settingsButton, _aboutButton, _exitButton,
     _backSettingsButton, _backAboutButton, _secretsButton, _backSecretsButton;
-    [Inject]
+    [SerializeField]
+    private List<DifficultyLevel> _difficultyLevels;
     private ProjectSettingsInstaller.SavedPrefsNames _prefsNames;
+    LetterTimer.Settings _timerSettings;
+    CannoballsDamager.Settings _cannoballsSettings;
+
+    [Inject]
+    private void Construct(ProjectSettingsInstaller.SavedPrefsNames prefsNames, LetterTimer.Settings timerSettings,
+        CannoballsDamager.Settings cannoballsSettings)
+    {
+        _prefsNames = prefsNames;
+        _timerSettings = timerSettings;
+        _cannoballsSettings = cannoballsSettings;
+    }
 
     private void Start()
     {
@@ -56,17 +68,32 @@ public class MainMenuSectionsManager : MonoBehaviour
 
     private void OnContinuePressed()
     {
+        if (PlayerPrefs.HasKey(_prefsNames.difficulty))
+            SelectDifficulty(PlayerPrefs.GetInt(_prefsNames.difficulty));
+
         StartGame();
     }
 
     private void OnStartPressed()
     {
+        _mainScreen.SetActive(false);
+        _difficultyScreen.SetActive(true);
+    }
+
+    public void OnDifficultyLevelPressed(int number)
+    {
         PlayerPrefs.DeleteKey(_prefsNames.redCity);
         PlayerPrefs.DeleteKey(_prefsNames.blueCity);
         PlayerPrefs.DeleteKey(_prefsNames.yellowCity);
         PlayerPrefs.DeleteKey(_prefsNames.cannonballs);
+        PlayerPrefs.DeleteKey(_prefsNames.timer);
+        PlayerPrefs.DeleteKey(_prefsNames.difficulty);
+
+        SelectDifficulty(number);
+        _difficultyScreen.SetActive(false);
         StartGame();
     }
+
 
     private void StartGame()
     {
@@ -74,6 +101,19 @@ public class MainMenuSectionsManager : MonoBehaviour
         //_settingsScreen.SetActive(false);
         _loadingScreen.SetActive(true);
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void SelectDifficulty(int number)
+    {
+        if (number >= _difficultyLevels.Count)
+            return;
+
+        var difficultyLevel = _difficultyLevels[number];
+        _timerSettings.initialDeliveryTime = difficultyLevel.initialDeliveryTime;
+        _timerSettings.initialDeliveryTimeDelta = difficultyLevel.initialDeliveryTimeDelta;
+        _timerSettings.initialDeliveryTimeMin = difficultyLevel.initialDeliveryTimeMin;
+        _cannoballsSettings.timeBetweenHits = difficultyLevel.timeBetweenHits;
+        PlayerPrefs.SetInt(_prefsNames.difficulty, number);
     }
 
     private void OnSecretsPressed()
@@ -94,11 +134,12 @@ public class MainMenuSectionsManager : MonoBehaviour
         _aboutScreen.SetActive(true);
     }
 
-    private void OnBackPressed()
+    public void OnBackPressed()
     {
         _settingsScreen.SetActive(false);
         _aboutScreen.SetActive(false);
         _secretsScreen.SetActive(false);
+        _difficultyScreen.SetActive(false);
         _mainScreen.SetActive(true);
     }
 }

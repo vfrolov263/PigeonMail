@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputSettings:
     verticalInversion: 0
-    sensitivity: 0.5
+    sensitivity: 0.56677437
+    gamepadConnected: 0
   AudioSettings:
-    volume: 0.7623726
+    volume: 0.7
     decayRate: 0.5
   PrefsNames:
     resolution: resolution
@@ -30,3 +31,5 @@ MonoBehaviour:
     secrets: secrets
     cannonballs: cannonballs
     easterEgg: easter_egg
+    timer: timer
+    difficulty: difficulty

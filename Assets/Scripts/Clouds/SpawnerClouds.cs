@@ -10,6 +10,7 @@ public class SpawnerClouds : MonoBehaviour
     [SerializeField] private float _spawnTime = 2.0f;
 
     [SerializeField] private GameObject[] _clouds;
+    private GameObject _cloudsGroupObject;
 
     private ObjectPool<GameObject> _pool;
 
@@ -23,11 +24,14 @@ public class SpawnerClouds : MonoBehaviour
             collectionCheck: true,
             defaultCapacity: 50,
             maxSize: 200);
+
+        _cloudsGroupObject = new("Clouds");
+        _cloudsGroupObject.transform.position = Vector3.zero;
     }
 
     private GameObject CreateCloud()
     {
-        GameObject cloud = Instantiate(_clouds[Random.Range(0, _clouds.Length)]);
+        GameObject cloud = Instantiate(_clouds[Random.Range(0, _clouds.Length)], _cloudsGroupObject.transform);
         cloud.AddComponent<MoveCloud>();
         return cloud;
     }

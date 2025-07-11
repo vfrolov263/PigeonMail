@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Pool;
-using Unity.VisualScripting;
 
 public class SpawnerСannonballs : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class SpawnerСannonballs : MonoBehaviour
     [SerializeField] private GameObject _player;
 
     private ObjectPool<GameObject> _pool;
+    private GameObject _bullets;
 
     private void Awake()
     {
@@ -25,12 +25,14 @@ public class SpawnerСannonballs : MonoBehaviour
             collectionCheck: true,
             defaultCapacity: 50,
             maxSize: 200);
+
+        _bullets = new GameObject("FireBalls");
+        _bullets.transform.position = Vector3.zero;
     }
 
     private GameObject CreateCloud()
     {
-        GameObject ball = Instantiate(_ball);
-        //ball.AddComponent<MoveCloud>();
+        GameObject ball = Instantiate(_ball, _bullets.transform);
         return ball;
     }
 
@@ -52,7 +54,7 @@ public class SpawnerСannonballs : MonoBehaviour
         StartCoroutine(LifeTime(ball));
     }
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(Spawn());
     }

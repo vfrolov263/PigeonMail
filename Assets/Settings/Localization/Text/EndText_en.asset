@@ -28,12 +28,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 209734422528
-    m_Localized: "\rYes, the residents of all three settlements are here!\nAnd finally
+    m_Localized: "\rYes, the residents of all three settlements are here! And finally
       they use a fork, not a pitchfork!"
     m_Metadata:
       m_Items: []
   - m_Id: 255741743104
-    m_Localized: "\rkrlk!"
+    m_Localized: Coo!
     m_Metadata:
       m_Items: []
   - m_Id: 346636505088
@@ -41,7 +41,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 54821136977920
-    m_Localized: Krlklkl.....
+    m_Localized: Coo...
     m_Metadata:
       m_Items: []
   - m_Id: 54781236563968

@@ -38,9 +38,9 @@ public class SettingsManager : MonoBehaviour
         InitScreenModeToggle();
         _inversionToggle.isOn = _inputSettings.verticalInversion = PlayerPrefs.GetInt(_prefsNames.inversion, 0) > 0;
         _inversionToggle.onValueChanged.AddListener(OnInversionChanged);
-        _sensitivitySlider.value = _inputSettings.sensitivity = PlayerPrefs.GetFloat(_prefsNames.sensitivity, .5f);
+        _sensitivitySlider.value = _inputSettings.sensitivity = PlayerPrefs.GetFloat(_prefsNames.sensitivity, .6f);
         _sensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
-        _volumeSlider.value = _audioSettings.volume = PlayerPrefs.GetFloat(_prefsNames.volume, .5f);
+        _volumeSlider.value = _audioSettings.volume = PlayerPrefs.GetFloat(_prefsNames.volume, .7f);
         _volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
     }
 

@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 17643687936
-    m_Localized: Start game
+    m_Localized: New game
     m_Metadata:
       m_Items: []
   - m_Id: 90456805376
@@ -124,6 +124,39 @@ MonoBehaviour:
     m_Localized: 'My dear Orson, come back soon!
 
       Kisses, Olivia.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4839605293895680
+    m_Localized: Select difficulty level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840058643632128
+    m_Localized: Easy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840094542680064
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840131758739456
+    m_Localized: Hard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840422675664896
+    m_Localized: "\r\r- Always a long time for delivery\r\n\r- Settlements are destroyed
+      slowly in case of war"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840505953570816
+    m_Localized: '- Delivery time is rapidly decreasing
+
+      - Settlements are
+      intensively destroyed in case of war'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840528707670016
+    m_Localized: "- \rDelivery time is minimal\r\n- Settlements are destroyed extremely
+      quickly in case of war"
     m_Metadata:
       m_Items: []
   references:

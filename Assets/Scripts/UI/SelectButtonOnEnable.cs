@@ -1,11 +1,23 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
-public class SelectButtonOnEnable : MonoBehaviour
+namespace PigeonMail
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void OnEnable()
+    public class SelectButtonOnEnable : MonoBehaviour
     {
-        GetComponent<Button>().Select();
+        private static IInput.Settings _settings;
+
+        [Inject]
+        public void Construct(IInput.Settings settings)
+        {
+            _settings ??= settings;
+        }
+
+        private void OnEnable()
+        {
+            if (_settings.gamepadConnected)
+                GetComponent<Button>().Select();
+        }
     }
 }

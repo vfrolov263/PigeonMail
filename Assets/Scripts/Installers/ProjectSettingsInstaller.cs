@@ -15,7 +15,8 @@ namespace PigeonMail
         public class SavedPrefsNames
         {
             public string resolution, fullscreen, inversion, volume, sensitivity,
-                redCity, blueCity, yellowCity, secrets, cannonballs, easterEgg;
+                redCity, blueCity, yellowCity, secrets, cannonballs, easterEgg,
+                timer, difficulty;
         }
 
         public override void InstallBindings()

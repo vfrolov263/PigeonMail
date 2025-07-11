@@ -130,7 +130,8 @@ public class TutorialActions : MonoBehaviour
 
     public void FinishTutorial()
     {
-        _mailManager.gameObject.SetActive(true);
+        StartMailService();
+        StartTimer();
 
         if (_timeScaler.IsPaused)
             _timeScaler.PlayGame();

@@ -14,17 +14,16 @@ namespace PigeonMail
         private Settings _settings;
         private SignalBus _signalBus;
         private float _initialTime;
+        private ProjectSettingsInstaller.SavedPrefsNames _prefsNames;
 
-        private void Awake()
-        {
-            _initialTime = _settings.initialDeliveryTime;
-        }
+        private void Awake() => _initialTime = PlayerPrefs.GetFloat(_prefsNames.timer, _settings.initialDeliveryTime);
 
         [Inject]
-        public void Construct(SignalBus signalBus, Settings settings)
+        public void Construct(SignalBus signalBus, Settings settings, ProjectSettingsInstaller.SavedPrefsNames prefsNames)
         {
             _settings = settings;
             _signalBus = signalBus;
+            _prefsNames = prefsNames;
         }
 
         private void OnEnable() => StartCoroutine(Tick());
@@ -36,6 +35,8 @@ namespace PigeonMail
 
             if (_initialTime < _settings.initialDeliveryTimeMin)
                 _initialTime = _settings.initialDeliveryTimeMin;
+
+            PlayerPrefs.SetFloat(_prefsNames.timer, _initialTime);
         }
 
         private IEnumerator Tick()

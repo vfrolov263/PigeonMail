@@ -111,6 +111,34 @@ MonoBehaviour:
     m_Key: EASTER_EGG_3
     m_Metadata:
       m_Items: []
+  - m_Id: 4839605293895680
+    m_Key: DIFFICULTY_LEVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840058643632128
+    m_Key: EASY_LEVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840094542680064
+    m_Key: MEDIUM_LEVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840131758739456
+    m_Key: HARD_LEVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840422675664896
+    m_Key: EASY_LEVEL_INFO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840505953570816
+    m_Key: MEDIUM_LEVEL_INFO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4840528707670016
+    m_Key: HARD_LEVEL_INFO
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
